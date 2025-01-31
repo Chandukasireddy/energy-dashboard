@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS  # if using CORS
 import random
 
 app = Flask(__name__)
+CORS(app)  # Optional: enables CORS for all routes
 
 def generate_energy_data():
     countries = ["Germany", "France", "Italy", "Spain", "Poland"]
