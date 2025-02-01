@@ -3,10 +3,11 @@ from flask_cors import CORS
 import random
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+# Enable CORS for all routes. This ensures every response includes the header.
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 def generate_energy_data():
-    # Define some example countries
+    # List of sample countries
     countries = ["Germany", "France", "Italy", "Spain", "Poland"]
     data = []
     # Generate fake energy data for each country
