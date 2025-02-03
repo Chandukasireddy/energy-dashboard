@@ -1,6 +1,6 @@
 # Energy Market Dashboard
 
-```markdown
+
 
 The **Energy Market Dashboard** is a full-stack project that simulates and visualizes energy market data using a Flask backend and a React frontend. The backend generates fake energy data for a set of countries, and the frontend displays this data in a responsive bar chart.
 
