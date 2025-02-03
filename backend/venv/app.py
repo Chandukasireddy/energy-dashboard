@@ -3,17 +3,12 @@ from flask_cors import CORS
 import random
 
 app = Flask(__name__)
-# Configure to allow cross-origin requests from any domain.
+# Enable CORS for all routes
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Optional: Force HTTPS for generated URLs (if needed)
-app.config['PREFERRED_URL_SCHEME'] = 'https'
-
 def generate_energy_data():
-    # Sample countries
     countries = ["Germany", "France", "Italy", "Spain", "Poland"]
     data = []
-    # Generate fake data for each country
     for country in countries:
         price = round(random.uniform(20, 100), 2)
         demand = random.randint(1000, 5000)

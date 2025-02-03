@@ -1,4 +1,3 @@
-// All imports must be at the top
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
@@ -10,11 +9,9 @@ Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 function Dashboard() {
   const [energyData, setEnergyData] = useState([]);
 
-  // Fetch data when the component mounts
   useEffect(() => {
-    // Update this URL to match your Codespaces backend preview URL:
-    // (Replace with your verified backend URL. For example:)
-    axios.get('https://energy-dashboard-backend.onrender.com/api/data')
+    // Use the Fly.io backend URL
+    axios.get('https://energy-dashboard-backend.fly.dev/api/data')
       .then(response => {
         console.log('Fetched data:', response.data);
         setEnergyData(response.data);
@@ -22,7 +19,6 @@ function Dashboard() {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  // Prepare the chart data
   const data = {
     labels: energyData.map(item => item.country),
     datasets: [
@@ -43,7 +39,6 @@ function Dashboard() {
     <div>
       <h1>Energy Market Dashboard</h1>
       {energyData.length > 0 ? (
-        // The key forces the Bar component to reinitialize when data changes (helps with canvas issues)
         <Bar key={JSON.stringify(data)} data={data} />
       ) : (
         <p>Loading data...</p>
