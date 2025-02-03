@@ -14,7 +14,7 @@ function Dashboard() {
   useEffect(() => {
     // Update this URL to match your Codespaces backend preview URL:
     // (Replace with your verified backend URL. For example:)
-    axios.get('https://organic-funicular-gv7rjpq754pfj4r-5000.app.github.dev/api/data')
+    axios.get('https://energy-dashboard-backend.onrender.com/api/data')
       .then(response => {
         console.log('Fetched data:', response.data);
         setEnergyData(response.data);
