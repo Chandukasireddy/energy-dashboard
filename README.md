@@ -29,9 +29,27 @@ The **Energy Market Dashboard** is a full-stack project that simulates and visua
 
 ## Project Structure
 
-energy-dashboard/ ├── backend/ │ ├── app.py # Flask application code │ ├── requirements.txt # Python dependencies │ ├── venv/ # Virtual environment (not tracked by Git) │ └── Dockerfile # Dockerfile for the Flask backend ├── frontend/ │ └── energy-dashboard-frontend/ │ ├── public/ │ ├── src/ │ │ ├── App.js # Main React component │ │ ├── Dashboard.js # Dashboard component for visualization │ │ └── ... │ ├── package.json # React app dependencies │ └── Dockerfile # (Optional) Dockerfile for the React frontend └── docker-compose.yml # (Optional) Docker Compose file to run both services locally
+```
+energy-dashboard/
+├── backend/
+│   ├── app.py              # Flask application code
+│   ├── requirements.txt    # Python dependencies
+│   ├── venv/               # Virtual environment (not tracked by Git)
+│   └── Dockerfile          # Dockerfile for the Flask backend
+├── frontend/
+│   └── energy-dashboard-frontend/
+│       ├── public/
+│       ├── src/
+│       │   ├── App.js      # Main React component
+│       │   ├── Dashboard.js  # Dashboard component for visualization
+│       │   └── ...
+│       ├── package.json    # React app dependencies
+│       └── Dockerfile      # (Optional) Dockerfile for the React frontend
+└── docker-compose.yml      # (Optional) Docker Compose file to run both services locally
+```
 
 ## What the Project Does
+
 
 - **Backend:**
   - The Flask backend in `backend/app.py` simulates energy market data by randomly generating values for energy price and demand for a list of countries.
